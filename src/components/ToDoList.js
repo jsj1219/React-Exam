@@ -22,9 +22,7 @@ function ToDoList() {
   const dayName = today.toLocaleString("ko-KR", { weekday: "long" });
 
   const [open, setOpen] = useState(false);
-  const [done, setDone] = useState(false);
   const onToggle = () => setOpen(!open);
-  const onDone = () => setDone(!done);
 
   const [toDo, setToDo] = useState("");
   const [toDos, setToDos] = useState([
@@ -38,7 +36,7 @@ function ToDoList() {
       text: '할일2',
       checked: true,
     },
-  ]); //추가된 할일
+  ]);
   const nextId = useRef(2);
   
   const undoneTasks = toDos.filter(todo => !todo.checked);
@@ -64,13 +62,14 @@ function ToDoList() {
     setOpen(false);
   };
 
-  // const onRemove = useCallback(
-  //   (id) => {
-  //     setToDos(toDos.filter((toDo) => toDo.id !== id));
-  //   },
-  //   [toDos],
-  // );
+  const onClick = () => {
+    //아이콘을 클릭하면 toDo.checked가 변경되도록
 
+  }
+
+  // const onDelete = (event) => {
+
+  // }
   console.log(toDos);
   return (
     <div className={ToDoListStyles.todolist_wrapper}>
@@ -84,21 +83,27 @@ function ToDoList() {
 
       <div className={ToDoListStyles.todoblock}>
         {/* // ToDoList Item */}
-        <div className={ToDoListStyles.todoitem_block}>
-          <button
-            type="button"
-            className={`${ToDoListStyles.check_icon} ${
-              done ? ToDoListStyles.active : ""
-            }`}
-            onClick={onDone}
+        {toDos.map((toDo) => (
+          <div
+            className={ToDoListStyles.todoitem_block}
+            {...toDo}
+            key={toDo.id}
           >
-            {done && <MdDone />}
-          </button>
-          <p className={ToDoListStyles.todoitem}>할일 1</p>
-          <button type="button" className={ToDoListStyles.remove_btn}>
-            <MdDelete />
-          </button>
-        </div>
+            <button
+              type="button"
+              className={`${ToDoListStyles.check_icon} ${
+                toDo.checked ? ToDoListStyles.active : ""
+              }`}
+              onClick={onClick}
+            >
+              {toDo.checked && <MdDone />}
+            </button>
+            <p className={ToDoListStyles.todoitem}>{toDo.text}</p>
+            <button type="button" className={ToDoListStyles.remove_btn}>
+              <MdDelete />
+            </button>
+          </div>
+        ))}
         {/* ToDoList Item // */}
 
         {/* // ToDoList Create */}
