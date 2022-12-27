@@ -62,14 +62,16 @@ function ToDoList() {
     setOpen(false);
   };
 
-  const onClick = () => {
+  const onClick = (id) => {
     //아이콘을 클릭하면 toDo.checked가 변경되도록
+    setToDos(toDos.map(toDo =>
+      toDo.id === id ? {...toDo, checked: !toDo.checked} : toDo
+    ))
+  };
 
+  const onDelete = (id) => {
+    console.log("선택된 id -> ", id)
   }
-
-  // const onDelete = (event) => {
-
-  // }
   console.log(toDos);
   return (
     <div className={ToDoListStyles.todolist_wrapper}>
@@ -94,12 +96,16 @@ function ToDoList() {
               className={`${ToDoListStyles.check_icon} ${
                 toDo.checked ? ToDoListStyles.active : ""
               }`}
-              onClick={onClick}
+              onClick={() => onClick(toDo.id)}
             >
               {toDo.checked && <MdDone />}
             </button>
             <p className={ToDoListStyles.todoitem}>{toDo.text}</p>
-            <button type="button" className={ToDoListStyles.remove_btn}>
+            <button
+              type="button"
+              className={ToDoListStyles.remove_btn}
+              onClick={() => onDelete(toDo.id)}
+            >
               <MdDelete />
             </button>
           </div>
