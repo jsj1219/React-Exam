@@ -70,8 +70,9 @@ function ToDoList() {
   };
 
   const onDelete = (id) => {
-    console.log("선택된 id -> ", id)
+    setToDos((toDos) => toDos.filter((toDo) => toDo.id !== id));
   }
+  
   console.log(toDos);
   return (
     <div className={ToDoListStyles.todolist_wrapper}>
