@@ -17,6 +17,7 @@ const initialToDos = [
 function toDoReducer(state, action) {
   switch (action.type) {
     case 'CREATE':
+      //state배열에 action.toDo배열 합치는
       return state.concat(action.toDo);
     case 'TOGGLE':
       return state.map(toDo =>
