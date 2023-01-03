@@ -1,7 +1,7 @@
 import React from "react";
-import ToDoListStyles from "/Users/sungjucho/git/React-Example/src/styles/ToDoList.module.css";
-import ToDoListItem from "/Users/sungjucho/git/React-Example/src/components/ToDoListItem";
-import { useToDoState } from '/Users/sungjucho/git/React-Example/src/context/ToDoListContext';
+import ToDoListStyles from "styles/ToDoList.module.css";
+import ToDoListItem from "components/ToDoListItem";
+import { useToDoState } from 'context/ToDoListContext';
 
 
 function ToDoListBody() {

@@ -1,12 +1,14 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import '/Users/sungjucho/git/React-Example/src/styles/Header.css'
+import NavStyles from 'styles/Header.module.css';
 
 function Header(props) {
   return (
     <nav>
-      <div><NavLink to="/counter">Counter</NavLink></div>
-      <div><NavLink to="/todolist">TodoList</NavLink></div>
+      <ul className={NavStyles.nav_container}>
+        <li className={NavStyles.nav_item}><NavLink to="/counter">Counter</NavLink></li>
+        <li className={NavStyles.nav_item}><NavLink to="/todolist">TodoList</NavLink></li>
+      </ul>
     </nav>
   );
 }

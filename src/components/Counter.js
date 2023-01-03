@@ -1,4 +1,4 @@
-import CounterStyles from "/Users/sungjucho/git/React-Example/src/styles/Counter.module.css";
+import CounterStyles from "styles/Counter.module.css";
 import React, {useState} from "react";
 
 /**
@@ -21,23 +21,26 @@ function Counter() {
 
   return (
     <div className={CounterStyles.wrapper}>
-      <h1 className={CounterStyles.header}>카운터</h1>
-      <h3 className={CounterStyles.count}>{count}</h3>
-      <button
-        type="button"
-        className={`${CounterStyles.increase_btn} ${CounterStyles.btn}`}
-        onClick={onIncrease}
-      >
-        +1
-      </button>
-      <button
-        type="button"
-        className={`${CounterStyles.decrease_btn} ${CounterStyles.btn}`}
-        onClick={onDecrease}
-      >
-        -1
-      </button>
+      <div className={CounterStyles.counter_inner}>
+        <h1 className={CounterStyles.header}>카운터</h1>
+        <h3 className={CounterStyles.count}>{count}</h3>
+        <button
+          type="button"
+          className={`${CounterStyles.increase_btn} ${CounterStyles.btn}`}
+          onClick={onIncrease}
+        >
+          +1
+        </button>
+        <button
+          type="button"
+          className={`${CounterStyles.decrease_btn} ${CounterStyles.btn}`}
+          onClick={onDecrease}
+        >
+          -1
+        </button>
+      </div>
     </div>
+
   );
 }
 
