@@ -1,10 +1,10 @@
 import React from "react";
-import ToDoListStyles from "../styles/ToDoList.module.css";
+import ToDoListStyles from "/Users/sungjucho/git/React-Example/src/styles/ToDoList.module.css";
 
-import ToDoListHead from "./ToDoListHead";
-import ToDoListBody from "./ToDoListBody";
-import ToDoListFooter from "./ToDoListFooter";
-import { ToDoProvider } from "./ToDoListContext";
+import ToDoListHead from "/Users/sungjucho/git/React-Example/src/components/ToDoListHead";
+import ToDoListBody from "/Users/sungjucho/git/React-Example/src/components/ToDoListBody";
+import ToDoListFooter from "/Users/sungjucho/git/React-Example/src/components/ToDoListFooter";
+import { ToDoProvider } from "/Users/sungjucho/git/React-Example/src/context/ToDoListContext";
 
 /**
  * react 예제3) ToDoList

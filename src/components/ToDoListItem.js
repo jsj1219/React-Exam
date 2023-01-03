@@ -1,7 +1,7 @@
 import React from 'react';
-import ToDoListStyles from "../styles/ToDoList.module.css";
+import ToDoListStyles from "/Users/sungjucho/git/React-Example/src/styles/ToDoList.module.css";
 import { MdDone, MdDelete } from 'react-icons/md';
-import { useToDoDispatch } from './ToDoListContext';
+import { useToDoDispatch } from '/Users/sungjucho/git/React-Example/src/context/ToDoListContext';
 
 
 function ToDoListItem({ id, checked, text }) {

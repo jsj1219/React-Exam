@@ -1,6 +1,6 @@
 import React from "react";
-import ToDoListStyles from "../styles/ToDoList.module.css";
-import { useToDoState } from "./ToDoListContext";
+import ToDoListStyles from "/Users/sungjucho/git/React-Example/src/styles/ToDoList.module.css";
+import { useToDoState } from "/Users/sungjucho/git/React-Example/src/context/ToDoListContext";
 
 function ToDoListHead() {
   const toDos = useToDoState();
