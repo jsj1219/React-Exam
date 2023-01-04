@@ -1,4 +1,4 @@
-import CounterStyles from "styles/Counter.module.css";
+import CounterStyles from "@styles/Counter.module.css";
 import React, {useState} from "react";
 
 /**

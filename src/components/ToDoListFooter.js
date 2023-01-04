@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import ToDoListStyles from "styles/ToDoList.module.css";
-import { MdAdd } from 'react-icons/md';
-import { useToDoDispatch, useToDoNextId } from 'context/ToDoListContext';
+import ToDoListStyles from "@styles/ToDoList.module.css";
+import { MdAdd } from "react-icons/md";
+import { useToDoDispatch, useToDoNextId } from "@context/ToDoListContext";
 
 function ToDoListFooter() {
   const [open, setOpen] = useState(false);
